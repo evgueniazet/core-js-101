@@ -129,9 +129,14 @@ const removeFalsyValues = (arr) => arr.filter((item) => item !== false)
  *    => [ 'PERMANENT-INTERNSHIP', 'GLUTINOUS-SHRIEK', 'MULTIPLICATIVE-ELEVATION' ],
  *    [ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ]  => [ 'A', 'B', 'C', 'D', 'E', 'F', 'G' ]
  */
-function getUpperCaseStrings(/* arr */) {
-  throw new Error('Not implemented');
-}
+const getUpperCaseStrings = (arr) => {
+  const array = [];
+  for (let i = 0; i < arr.length; i += 1) {
+    const newString = arr[i].toUpperCase();
+    array.push(newString);
+  }
+  return array;
+};
 
 
 /**
