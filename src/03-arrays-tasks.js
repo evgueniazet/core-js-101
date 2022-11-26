@@ -174,7 +174,6 @@ const insertItem = (arr, item, index) => {
 };
 
 
-
 /**
  * Returns the n first items of the specified array
  *
