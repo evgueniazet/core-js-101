@@ -213,13 +213,8 @@ const isPrime = (n) => {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-const toNumber = (value, def) => {
-  if (typeof value === 'string') {
-    if (typeof String(value) === 'number') {
-      return String(value);
-    }
-    return def;
-  }
+const toNumber = (/* value, def */) => {
+
 };
 
 

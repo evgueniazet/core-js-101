@@ -254,9 +254,8 @@ function encodeToRot13(/* str */) {
 const isString = (value) => {
   if (typeof value === 'string') {
     return true;
-  } else {
-    return false;
   }
+  return false;
 };
 
 
