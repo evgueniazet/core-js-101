@@ -168,9 +168,12 @@ const getStringsLength = (arr) => {
  *    [ 1, 3, 4, 5 ], 2, 1  => [ 1, 2, 3, 4, 5 ]
  *    [ 1, 'b', 'c'], 'x', 0  => [ 'x', 1, 'b', 'c' ]
  */
-function insertItem(/* arr, item, index */) {
-  throw new Error('Not implemented');
-}
+const insertItem = (arr, item, index) => {
+  arr.splice(index, 0, item);
+  return arr;
+};
+
+
 
 /**
  * Returns the n first items of the specified array
