@@ -1,9 +1,7 @@
-// const getUpperCaseStrings = (arr) => {
-//   let array = [];
-//   for (let i = 0; i < arr.length; i++) {
-//     const newString = arr[i].toUpperCase();
-//     array.push(newString);
+// const getStringsLength = (arr) => {
+//   let arrayLength = [];
+//   for (let i = 0; i < arr.length; i = i + 1) {
+//     arrayLength.push(arr[i].length);
 //   }
-//   return array;
+//   return arrayLength;
 // };
-// getUpperCaseStrings(['permanent-internship', 'glutinous-shriek', 'multiplicative-elevation']);

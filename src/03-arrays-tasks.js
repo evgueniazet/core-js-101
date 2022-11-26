@@ -149,9 +149,13 @@ const getUpperCaseStrings = (arr) => {
  *    [ '', 'a', 'bc', 'def', 'ghij' ]  => [ 0, 1, 2, 3, 4 ]
  *    [ 'angular', 'react', 'ember' ] => [ 7, 5, 5 ]
  */
-function getStringsLength(/* arr */) {
-  throw new Error('Not implemented');
-}
+const getStringsLength = (arr) => {
+  const arrayLength = [];
+  for (let i = 0; i < arr.length; i += 1) {
+    arrayLength.push(arr[i].length);
+  }
+  return arrayLength;
+};
 
 /**
  * Inserts the item into specified array at specified index
