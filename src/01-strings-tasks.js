@@ -18,9 +18,7 @@
  *   'aa',''    => 'aa'
  *   '',  'bb'  => 'bb'
  */
-function concatenateStrings(/* value1, value2 */) {
-  throw new Error('Not implemented');
-}
+const concatenateStrings = (value1, value2) => value1 + value2;
 
 
 /**
@@ -34,9 +32,11 @@ function concatenateStrings(/* value1, value2 */) {
  *   'b'     => 1
  *   ''      => 0
  */
-function getStringLength(/* value */) {
-  throw new Error('Not implemented');
-}
+const getStringLength = (value) => {
+  const StringLength = value.length;
+  return StringLength;
+};
+
 
 /**
  * Returns the result of string template and given parameters firstName and lastName.
@@ -51,9 +51,12 @@ function getStringLength(/* value */) {
  *   'John','Doe'      => 'Hello, John Doe!'
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
-function getStringFromTemplate(/* firstName, lastName */) {
-  throw new Error('Not implemented');
-}
+
+
+const getStringFromTemplate = (firstName, lastName) => {
+  const result = `Hello, ${firstName} ${lastName}!`;
+  return result;
+};
 
 /**
  * Extracts a name from template string 'Hello, First_Name Last_Name!'.
@@ -62,12 +65,13 @@ function getStringFromTemplate(/* firstName, lastName */) {
  * @return {string}
  *
  * @example
- *   'Hello, John Doe!' => 'John Doe'
+ *   с => 'John Doe'
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
-function extractNameFromTemplate(/* value */) {
-  throw new Error('Not implemented');
-}
+const extractNameFromTemplate = (value) => {
+  const result = value.replace(/Hello,/g, '');
+  return result.replace(/!/g, '');
+};
 
 
 /**
@@ -80,9 +84,10 @@ function extractNameFromTemplate(/* value */) {
  *   'John Doe'  => 'J'
  *   'cat'       => 'c'
  */
-function getFirstChar(/* value */) {
-  throw new Error('Not implemented');
-}
+const getFirstChar = (value) => {
+  const letter = value.charAt(0);
+  return letter;
+};
 
 /**
  * Removes a leading and trailing whitespace characters from string.
@@ -95,9 +100,10 @@ function getFirstChar(/* value */) {
  *   'cat'              => 'cat'
  *   '\tHello, World! ' => 'Hello, World!'
  */
-function removeLeadingAndTrailingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
-}
+const removeLeadingAndTrailingWhitespaces = (value) => {
+  const result = value.trim();
+  return result;
+};
 
 /**
  * Returns a string that repeated the specified number of times.
@@ -110,9 +116,10 @@ function removeLeadingAndTrailingWhitespaces(/* value */) {
  *   'A', 5  => 'AAAAA'
  *   'cat', 3 => 'catcatcat'
  */
-function repeatString(/* value, count */) {
-  throw new Error('Not implemented');
-}
+const repeatString = (value, count) => {
+  const result = value.repeat(count);
+  return result;
+};
 
 /**
  * Remove the first occurrence of string inside another string
@@ -126,9 +133,10 @@ function repeatString(/* value, count */) {
  *   'I like legends', 'end' => 'I like legs',
  *   'ABABAB','BA' => 'ABAB'
  */
-function removeFirstOccurrences(/* str, value */) {
-  throw new Error('Not implemented');
-}
+const removeFirstOccurrences = (str, value) => {
+  const result = str.replace(value, '');
+  return result;
+};
 
 /**
  * Remove the first and last angle brackets from tag string
@@ -141,10 +149,10 @@ function removeFirstOccurrences(/* str, value */) {
  *   '<span>' => 'span'
  *   '<a>' => 'a'
  */
-function unbracketTag(/* str */) {
-  throw new Error('Not implemented');
-}
-
+const unbracketTag = (str) => {
+  const stringWithoutFirstSymbol = str.substring(1);
+  return stringWithoutFirstSymbol.slice(0, -1);
+};
 
 /**
  * Converts all characters of the specified string into the upper case
@@ -156,9 +164,10 @@ function unbracketTag(/* str */) {
  *   'Thunderstruck' => 'THUNDERSTRUCK'
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
-function convertToUpperCase(/* str */) {
-  throw new Error('Not implemented');
-}
+const convertToUpperCase = (str) => {
+  const result = str.toUpperCase();
+  return result;
+};
 
 /**
  * Extracts e-mails from single string with e-mails list delimeted by semicolons
@@ -175,9 +184,11 @@ function convertToUpperCase(/* str */) {
  *   ],
  *   'info@gmail.com' => ['info@gmail.com']
  */
-function extractEmails(/* str */) {
-  throw new Error('Not implemented');
-}
+const extractEmails = (str) => {
+  const newStr = str.replaceAll(';', ',');
+  return newStr.split(',');
+};
+
 
 /**
  * Returns the string representation of rectangle with specified width and height
@@ -203,7 +214,7 @@ function extractEmails(/* str */) {
  *
  */
 function getRectangleString(/* width, height */) {
-  throw new Error('Not implemented');
+
 }
 
 
@@ -224,7 +235,7 @@ function getRectangleString(/* width, height */) {
  *
  */
 function encodeToRot13(/* str */) {
-  throw new Error('Not implemented');
+
 }
 
 /**
@@ -240,9 +251,13 @@ function encodeToRot13(/* str */) {
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(/* value */) {
-  throw new Error('Not implemented');
-}
+const isString = (value) => {
+  if (typeof value === 'string') {
+    return true;
+  } else {
+    return false;
+  }
+};
 
 
 /**
@@ -270,7 +285,7 @@ function isString(/* value */) {
  *   'K♠' => 51
  */
 function getCardId(/* value */) {
-  throw new Error('Not implemented');
+
 }
 
 

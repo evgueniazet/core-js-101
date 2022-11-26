@@ -20,9 +20,14 @@
  *    ['Array', 'Number', 'string'], 'Date'    => -1
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
-function findElement(/* arr, value */) {
-  throw new Error('Not implemented');
-}
+const findElement = (arr, value) => {
+  arr.forEach((item, index) => {
+    if (item === value) {
+      return index;
+    }
+    return -1;
+  });
+};
 
 /**
  * Generates an array of odd numbers of the specified length
@@ -35,9 +40,15 @@ function findElement(/* arr, value */) {
  *    2 => [ 1, 3 ]
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(/* len */) {
-  throw new Error('Not implemented');
-}
+const generateOdds = (len) => {
+  let itemArr = 1;
+  const array = [];
+  for (let i = 1; i <= len; i + 1) {
+    array.push(itemArr);
+    itemArr += 2;
+  }
+  return array;
+};
 
 
 /**
@@ -52,9 +63,7 @@ function generateOdds(/* len */) {
  *    [0, 1, 2, 3, 4, 5] => [0, 1, 2, 3, 4, 5,   0, 1, 2, 3, 4, 5]
  *    [] => []
  */
-function doubleArray(/* arr */) {
-  throw new Error('Not implemented');
-}
+const doubleArray = (arr) => arr.concat(arr);
 
 
 /**
@@ -68,9 +77,8 @@ function doubleArray(/* arr */) {
  *    [-1, 2, -5, -4, 0] => [ 2 ]
  *    [] => []
  */
-function getArrayOfPositives(/* arr */) {
-  throw new Error('Not implemented');
-}
+const getArrayOfPositives = (arr) => arr.filter((item) => item > 0);
+
 
 /**
  * Returns the array with strings only in the specified array (in original order)
@@ -83,9 +91,10 @@ function getArrayOfPositives(/* arr */) {
  *    [ 1, 2, 3, 4, 5 ] => []
  *    [ 'cat, 'dog', 'raccoon' ] => [ 'cat', 'dog', 'raccoon' ]
  */
-function getArrayOfStrings(/* arr */) {
-  throw new Error('Not implemented');
-}
+const getArrayOfStrings = (arr) => {
+  const filteredArr = arr.filter((item) => typeof item === 'string');
+  return filteredArr;
+};
 
 /**
  * Removes falsy values from the specified array
@@ -96,7 +105,7 @@ function getArrayOfStrings(/* arr */) {
  * @return {array}
  *
  * @example
- *    [ 0, false, 'cat', NaN, true, '' ] => [ 'cat', true ]
+ *    [ 0, false, 'cat', NaN, true, '' ]=> [ 'cat', true ]
  *    [ 1, 2, 3, 4, 5, 'false' ]         => [ 1, 2, 3, 4, 5, 'false' ]
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
