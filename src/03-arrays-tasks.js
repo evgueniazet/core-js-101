@@ -40,16 +40,19 @@ const findElement = (arr, value) => {
  *    2 => [ 1, 3 ]
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
+// function generateOdds(/* len */) {
+//   throw new Error('Not implemented');
+// }
+
 const generateOdds = (len) => {
   let itemArr = 1;
   const array = [];
-  for (let i = 1; i <= len; i + 1) {
+  for (let i = 1; i <= len; i += 1) {
     array.push(itemArr);
     itemArr += 2;
   }
   return array;
 };
-
 
 /**
  * Returns the doubled array - elements of the specified array
@@ -64,7 +67,6 @@ const generateOdds = (len) => {
  *    [] => []
  */
 const doubleArray = (arr) => arr.concat(arr);
-
 
 /**
  * Returns an array of positive numbers from the specified array in original order
@@ -95,7 +97,6 @@ const getArrayOfStrings = (arr) => {
   const filteredArr = arr.filter((item) => typeof item === 'string');
   return filteredArr;
 };
-
 /**
  * Removes falsy values from the specified array
  * Falsy values: false, null, 0, "", undefined, and NaN.
@@ -105,7 +106,7 @@ const getArrayOfStrings = (arr) => {
  * @return {array}
  *
  * @example
- *    [ 0, false, 'cat', NaN, true, '' ]=> [ 'cat', true ]
+ *    [ 0, false, 'cat', NaN, true, '' ] => [ 'cat', true ]
  *    [ 1, 2, 3, 4, 5, 'false' ]         => [ 1, 2, 3, 4, 5, 'false' ]
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
