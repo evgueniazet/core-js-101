@@ -184,9 +184,10 @@ const insertItem = (arr, item, index) => {
  *    [ 1, 3, 4, 5 ], 2 => [ 1, 3 ]
  *    [ 'a', 'b', 'c', 'd'], 3  => [ 'a', 'b', 'c' ]
  */
-function getHead(/* arr, n */) {
-  throw new Error('Not implemented');
-}
+const getHead = (arr, n) => {
+  const newArr = arr.filter((item, index) => index < n);
+  return newArr;
+};
 
 
 /**
