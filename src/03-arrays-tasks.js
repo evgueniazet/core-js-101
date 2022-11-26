@@ -110,9 +110,13 @@ const getArrayOfStrings = (arr) => {
  *    [ 1, 2, 3, 4, 5, 'false' ]         => [ 1, 2, 3, 4, 5, 'false' ]
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
-function removeFalsyValues(/* arr */) {
-  throw new Error('Not implemented');
-}
+const removeFalsyValues = (arr) => arr.filter((item) => item !== false)
+  .filter((item) => item !== undefined)
+  .filter((item) => item !== null)
+  .filter((item) => item !== 0)
+  .filter((item) => item !== '')
+  .filter((item) => !Number.isNaN(item));
+
 
 /**
  * Returns the array of uppercase strings from the specified array

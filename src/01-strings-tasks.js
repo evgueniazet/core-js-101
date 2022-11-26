@@ -69,7 +69,7 @@ const getStringFromTemplate = (firstName, lastName) => {
   *   'Hello, Chuck Norris!' => 'Chuck Norris'
   */
 const extractNameFromTemplate = (value) => {
-  const result = value.replace(/Hello,/g, '');
+  const result = value.replace(/Hello, /g, '');
   return result.replace(/!/g, '');
 };
 
@@ -251,11 +251,8 @@ function encodeToRot13(/* str */) {
   *   isString('test') => true
   *   isString(new String('test')) => true
   */
-const isString = (value) => {
-  if (typeof value === 'string') {
-    return true;
-  }
-  return false;
+const isString = (/* value */) => {
+
 };
 
 
