@@ -94,9 +94,15 @@ const getSumBetweenNumbers = (n1, n2) => {
  *   10,1,1   =>  false
  *   10,10,10 =>  true
  */
-function isTriangle(/* a, b, c */) {
-  throw new Error('Not implemented');
-}
+const isTriangle = (a, b, c) => {
+  if (a <= 0 || b <= 0 || c <= 0) {
+    return false;
+  }
+  if (a + b > c && c + b > a && a + c > b) {
+    return true;
+  }
+  return false;
+};
 
 
 /**
