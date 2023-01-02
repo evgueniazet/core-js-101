@@ -38,7 +38,7 @@ const getFizzBuzz = (num) => {
     return 'Fizz';
   }
   return num;
-}
+};
 
 
 /**
