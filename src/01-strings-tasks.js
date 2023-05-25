@@ -207,7 +207,7 @@ const extractEmails = (str) => {
  *             '└──────────┘\n'
  *
  */
-function getRectangleString(/* width, height */) {}
+function getRectangleString(/* width, height */) { }
 
 /**
  * Encode specified string with ROT13 cipher
@@ -225,7 +225,7 @@ function getRectangleString(/* width, height */) {}
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
  */
-function encodeToRot13(/* str */) {}
+function encodeToRot13(/* str */) { }
 
 /**
  * Returns true if the value is string; otherwise false.
@@ -240,7 +240,13 @@ function encodeToRot13(/* str */) {}
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-const isString = (/* value */) => {};
+
+const isString = (value) => {
+  if (typeof value === 'string' || value instanceof String) {
+    return true;
+  }
+  return false;
+};
 
 /**
  * Returns playid card id.
@@ -266,7 +272,7 @@ const isString = (/* value */) => {};
  *   'Q♠' => 50
  *   'K♠' => 51
  */
-function getCardId(/* value */) {}
+function getCardId(/* value */) { }
 
 module.exports = {
   concatenateStrings,
