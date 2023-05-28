@@ -169,9 +169,29 @@ const getParallelepipedDiagonal = (a, b, c) => {
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
-function roundToPowerOfTen(/* num, pow */) {
-  throw new Error('Not implemented');
-}
+const roundToPowerOfTen = (num, pow) => {
+  const arr = Array.from(String(num), Number);
+  const newArr = arr.reverse();
+
+  const result = [];
+  newArr.forEach((item, index) => {
+    if (pow === 0) {
+      result.push(item);
+    } else if (pow > 0 && index > pow) {
+      result.push(item);
+    } else if (pow > 0 && index < pow) {
+      result.push(0);
+    } else if (newArr[index - 1] && newArr[index - 1] > 5) {
+      result.push(item + 1);
+    } else {
+      result.push(item);
+    }
+  });
+  result.reverse();
+  const string = result.join('');
+  return Number(string);
+};
+
 
 /**
  * Returns true is the number is prime; otherwise false.
