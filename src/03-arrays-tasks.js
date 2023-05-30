@@ -388,9 +388,19 @@ const getPositivesCount = (arr) => {
  *   [ 'nine','eight','nine','eight'] => [ 'eight','eight','nine','nine']
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
-function sortDigitNamesByNumericOrder(/* arr */) {
-  throw new Error('Not implemented');
-}
+const sortDigitNamesByNumericOrder = (arr) => {
+  const numbersArray = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
+  const result = [];
+
+  numbersArray.forEach((number) => {
+    arr.forEach((element) => {
+      if (number === element) {
+        result.push(element);
+      }
+    });
+  });
+  return result;
+};
 
 /**
  * Returns the sum of all items in the specified array of numbers
