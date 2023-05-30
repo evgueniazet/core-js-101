@@ -21,12 +21,18 @@
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
 const findElement = (arr, value) => {
+  const result = [];
+
   arr.forEach((item, index) => {
     if (item === value) {
-      return index;
+      result.push(index);
     }
-    return -1;
   });
+
+  if (result.length === 0) {
+    return -1;
+  }
+  return result;
 };
 
 /**
