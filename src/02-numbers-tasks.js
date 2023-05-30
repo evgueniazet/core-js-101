@@ -238,10 +238,14 @@ const isPrime = (n) => {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-const toNumber = (/* value, def */) => {
+const toNumber = (value, def) => {
+  const convertedValue = Number(value);
 
+  if (Number.isNaN(convertedValue)) {
+    return def;
+  }
+  return convertedValue;
 };
-
 
 module.exports = {
   getRectangleArea,
