@@ -570,9 +570,7 @@ const getIntervalArray = (start, end) => {
  *   [ 'a', 'a', 'a', 'a' ]  => [ 'a' ]
  *   [ 1, 1, 2, 2, 3, 3, 4, 4] => [ 1, 2, 3, 4]
  */
-function distinct(/* arr */) {
-  throw new Error('Not implemented');
-}
+const distinct = (arr) => [...new Set(arr)];
 
 /**
  * Groups elements of the specified array by key.
