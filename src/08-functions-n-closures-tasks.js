@@ -23,7 +23,7 @@
  *   getComposition(Math.sin, Math.asin)(x) => Math.sin(Math.asin(x))
  *
  */
-const getComposition = (f, g) => function (x) {
+const getComposition = (f, g) => function myFunc(x) {
   return f(g(x));
 };
 
