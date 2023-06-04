@@ -526,9 +526,23 @@ const toStringList = (arr) => {
  *      { country: 'Russia',  city: 'Saint Petersburg' }
  *    ]
  */
-function sortCitiesArray(/* arr */) {
-  throw new Error('Not implemented');
-}
+const sortCitiesArray = (arr) => {
+  arr.sort((a, b) => {
+    if (a.country === b.country) {
+      if (a.city < b.city) {
+        return -1;
+      } if (a.city > b.city) {
+        return 1;
+      }
+      return 0;
+    }
+    if (a.country < b.country) {
+      return -1;
+    }
+    return 1;
+  });
+  return arr;
+};
 
 /**
  * Creates an identity matrix of the specified size
@@ -548,9 +562,21 @@ function sortCitiesArray(/* arr */) {
  *           [0,0,0,1,0],
  *           [0,0,0,0,1]]
  */
-function getIdentityMatrix(/* n */) {
-  throw new Error('Not implemented');
-}
+const getIdentityMatrix = (n) => {
+  const matrix = [];
+
+  for (let i = 0; i < n; i += 1) {
+    matrix[i] = [];
+    for (let k = 0; k < n; k += 1) {
+      if (k === i) {
+        matrix[i][k] = 1;
+      } else {
+        matrix[i][k] = 0;
+      }
+    }
+  }
+  return matrix;
+};
 
 /**
  * Creates an array of integers from the specified start to end (inclusive)
@@ -674,9 +700,23 @@ function getElementByIndexes(/* arr, indexes */) {
  *   [ 1, 2, 3, 4, 5, 6, 7, 8 ]   =>  [ 5, 6, 7, 8, 1, 2, 3, 4 ]
  *
  */
-function swapHeadAndTail(/* arr */) {
-  throw new Error('Not implemented');
-}
+const swapHeadAndTail = (arr) => {
+  const result = [];
+
+  if (arr.length % 2 === 0) {
+    const center = Math.floor(arr.length / 2);
+    const firstHalf = arr.slice(0, center);
+    const secondHalf = arr.slice(center);
+    result.push(secondHalf, firstHalf);
+  } else {
+    const center = Math.round(arr.length / 2);
+    const firstHalf = arr.slice(0, center - 1);
+    const secondHalf = arr.slice(center);
+    result.push(secondHalf, center, firstHalf);
+  }
+  const array = result.flat();
+  return array;
+};
 
 
 module.exports = {

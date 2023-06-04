@@ -23,9 +23,9 @@
  *   getComposition(Math.sin, Math.asin)(x) => Math.sin(Math.asin(x))
  *
  */
-function getComposition(/* f, g */) {
-  throw new Error('Not implemented');
-}
+const getComposition = (f, g) => function (x) {
+  return f(g(x));
+};
 
 
 /**
@@ -44,9 +44,9 @@ function getComposition(/* f, g */) {
  *   power05(16) => 4
  *
  */
-function getPowerFunction(/* exponent */) {
-  throw new Error('Not implemented');
-}
+const getPowerFunction = (exponent) => function newFunc(x) {
+  return x ** exponent;
+};
 
 
 /**
@@ -68,19 +68,19 @@ function getPolynom() {
 
 
 /**
- * Memoizes passed function and returns function
- * which invoked first time calls the passed function and then always returns cached result.
- *
- * @params {Function} func - function to memoize
- * @return {Function} memoized function
- *
- * @example
- *   const memoizer = memoize(() => Math.random());
- *   memoizer() => some random number  (first run, evaluates the result of Math.random())
- *   memoizer() => the same random number  (second run, returns the previous cached result)
- *   ...
- *   memoizer() => the same random number  (next run, returns the previous cached result)
- */
+   * Memoizes passed function and returns function
+   * which invoked first time calls the passed function and then always returns cached result.
+   *
+   * @params {Function} func - function to memoize
+   * @return {Function} memoized function
+   *
+   * @example
+   *   const memoizer = memoize(() => Math.random());
+   *   memoizer() => some random number  (first run, evaluates the result of Math.random())
+   *   memoizer() => the same random number  (second run, returns the previous cached result)
+   *   ...
+   *   memoizer() => the same random number  (next run, returns the previous cached result)
+   */
 function memoize(/* func */) {
   throw new Error('Not implemented');
 }
