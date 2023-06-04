@@ -268,9 +268,23 @@ const toArrayOfSquares = (arr) => {
  *   [ 0, 0, 0, 0, 0]         => [ 0, 0, 0, 0, 0]
  *   [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] => [ 1, 3, 6, 10, 15, 21, 28, 36, 45, 55 ]
  */
-function getMovingSum(/* arr */) {
-  throw new Error('Not implemented');
-}
+const getMovingSum = (arr) => {
+  const result = [];
+  let number = arr[1] + arr[0];
+
+  arr.forEach((elem, i) => {
+    if (i === 0) {
+      result.push(elem);
+    } else if (i === 1) {
+      result.push(number);
+    } else {
+      number += arr[i];
+      result.push(number);
+    }
+  });
+  return result;
+};
+
 
 /**
  * Returns every second item from the specified array:
